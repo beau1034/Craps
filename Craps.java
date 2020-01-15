@@ -27,9 +27,22 @@ public class Craps
            System.out.println("  b. you roll a 7, and your lose...:(");
        }
     }
+    
+    public static int rollTheDice(Scanner in, Die d)
+    {
+        System.out.println("Press <Enter> to roll the dice...");
+        in.nextLine();      //Don't even need to save their input
+        int result1 = d.roll();
+        int result2 = d.roll();
+        int total = result1 + result2;
+        System.out.println("You rolled a " + result1 + " and a " + result2 + " for a total of: " + total);
+        return total;
+        
+    }
     public static void main(String[] args)
     {
        Scanner in = new Scanner(System.in);
+       Die d = new Die();
        System.out.println("The Game of Craps!");
        giveInstructions(in);
        System.out.println("Let's play a game!");
@@ -37,8 +50,36 @@ public class Craps
        String playStatus = "y";
        while (playStatus.equals("y"))
        {
-           System.out.println("DEBUG: We're playing Craps...");
-           
+           System.out.println("First roll!");
+           int result = rollTheDice(in,d);
+           if (result == 7 || result == 11)
+           {
+               System.out.println("You win!");
+           }
+           else if (result == 2 || result == 3 || result == 12)
+           {
+               System.out.println("You loose");
+           }
+           else 
+           {
+               int point = result;
+               System.out.println("Your point is: " + point + ". Try to roll it again!");
+               
+               result = rollTheDice(in,d);
+               while (result != 7 && result != point)
+               {
+                   System.out.println("Roll again");
+                   result = rollTheDice(in,d);
+               }
+               if (result == 7)
+               {
+                   System.out.println("Sorry... you lost...");
+               }
+                else 
+                {
+                    System.out.println("You rolled your point and won!");
+                }
+           }
            
            
            
@@ -49,5 +90,6 @@ public class Craps
                
             }
        }
+       System.out.println("Thanks for playing!");
     }
 }
