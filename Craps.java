@@ -32,5 +32,22 @@ public class Craps
        Scanner in = new Scanner(System.in);
        System.out.println("The Game of Craps!");
        giveInstructions(in);
+       System.out.println("Let's play a game!");
+       
+       String playStatus = "y";
+       while (playStatus.equals("y"))
+       {
+           System.out.println("DEBUG: We're playing Craps...");
+           
+           
+           
+           
+           System.out.print("Would you like the play again (Y/n)?");
+           playStatus = in.nextLine();
+           if (playStatus.equals("")) { playStatus = "y"; }
+           {
+               
+            }
+       }
     }
 }
