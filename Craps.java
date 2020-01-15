@@ -2,32 +2,35 @@
 /**
  * Write a description of class Craps here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Beau Gillam
+ * @version 2020-01-15
  */
+import java.util.Scanner;
+
 public class Craps
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Craps
-     */
-    public Craps()
+    public static void giveInstructions(Scanner in)
     {
-        // initialise instance variables
-        x = 0;
+       
+        System.out.print("Would you instructions on how to play Craps (Y/n)?");
+        String playGame = in.nextLine();
+       if (playGame.equals("") || 
+           playGame.substring(0,1).equalsIgnoreCase("y"))
+       {
+           System.out.println("1. Roll two dice and add them together.");
+           System.out.println("2. If you get a 7 or 11 on your first roll you win,");
+           System.out.println("  but if you get a 2, 3, or 12, you lose.");
+           System.out.println("  Any other number you don't win or lose. The die roll becomes your 'point.'");
+           System.out.println("3. If you didn't win or lose on the first roll, keep");
+           System.out.println("  rolling until:");
+           System.out.println("  a. you roll your point again, and win!");
+           System.out.println("  b. you roll a 7, and your lose...:(");
+       }
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
+    public static void main(String[] args)
     {
-        // put your code here
-        return x + y;
+       Scanner in = new Scanner(System.in);
+       System.out.println("The Game of Craps!");
+       giveInstructions(in);
     }
 }
