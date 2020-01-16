@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class Die here.
+ * This class creates the die to be used in craps 
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Beau Gillam
+ * @version 2020-01-16
  */
 public class Die
 {

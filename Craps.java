@@ -91,6 +91,6 @@ public class Craps
                
             }
        }
-       System.out.println("Thanks for playing!");
+       System.out.println("Thanks for playing! Goodbye!");
     }
 }
