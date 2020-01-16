@@ -78,6 +78,7 @@ public class Craps
                 else 
                 {
                     System.out.println("You rolled your point and won!");
+                    // HERE YOU ARE
                 }
            }
            
