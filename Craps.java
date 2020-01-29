@@ -1,6 +1,7 @@
 
 /**
- * Write a description of class Craps here.
+ * This is a cool program that allows players to play a game of craps! 
+ * It outlines the rules and allows for unlimited play
  *
  * @author Beau Gillam
  * @version 2020-01-15
